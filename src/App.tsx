@@ -121,7 +121,7 @@ function App() {
               {/* Footer Indicator */}
               <footer className="mt-8 border-t border-white/5 pt-4 text-center">
                 <p className="font-mono text-[8px] text-white/20 uppercase tracking-[0.5em]">
-                  Digital Archive // Built for Shahriar Alam Patwary // v3.2.0_MahoragaAdapted
+                  Digital Archive // v3.2.0
                 </p>
               </footer>
             </div>
