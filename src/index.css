@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-obsidian: #020617;
+  --color-cyber-blue: #00A3FF;
+  --color-cyber-pink: #FF00FF;
+  --color-cyber-yellow: #FFFF00;
+  --color-cyber-magenta: #BC13FE;
+  --color-slate-dark: #0f172a;
+  --color-neon-green: #39ff14;
+  --color-neon-amber: #ffbf00;
+  --color-neon-cyan: #00ffff;
+
+  --font-mono: "Fira Code", monospace;
+  --font-sans: "Inter", sans-serif;
+}
+
+:root {
+  background-color: var(--color-obsidian);
+  color: #e2e8f0;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-obsidian);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Utilities */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-obsidian);
+}
+
+.glitch-text::before {
+  left: 2px;
+  text-shadow: -2px 0 var(--color-neon-cyan);
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  left: -2px;
+  text-shadow: -2px 0 var(--color-neon-green);
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(31px, 9999px, 94px, 0);
+  }
+
+  20% {
+    clip: rect(62px, 9999px, 42px, 0);
+  }
+
+  40% {
+    clip: rect(16px, 9999px, 78px, 0);
+  }
+
+  60% {
+    clip: rect(89px, 9999px, 13px, 0);
+  }
+
+  80% {
+    clip: rect(45px, 9999px, 56px, 0);
+  }
+
+  100% {
+    clip: rect(23px, 9999px, 87px, 0);
+  }
+}
+
+@keyframes glitch-anim2 {
+  0% {
+    clip: rect(65px, 9999px, 12px, 0);
+  }
+
+  20% {
+    clip: rect(23px, 9999px, 98px, 0);
+  }
+
+  40% {
+    clip: rect(45px, 9999px, 34px, 0);
+  }
+
+  60% {
+    clip: rect(12px, 9999px, 76px, 0);
+  }
+
+  80% {
+    clip: rect(87px, 9999px, 45px, 0);
+  }
+
+  100% {
+    clip: rect(34px, 9999px, 12px, 0);
+  }
+}
+
+::selection {
+  background: var(--color-cyber-pink);
+  color: var(--color-obsidian);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-obsidian);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-slate-dark);
+  border: 1px solid var(--color-cyber-blue);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-cyber-blue);
+}
