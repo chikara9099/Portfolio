@@ -1,0 +1,19 @@
+.about__content {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: stretch;
+}
+
+.about__accent-bar {
+  width: 3px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, var(--accent), transparent);
+  border-radius: var(--radius-full);
+}
+
+.about__text {
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 720px;
+}
