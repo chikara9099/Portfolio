@@ -37,7 +37,38 @@
   gap: var(--space-md);
   margin-top: var(--space-lg);
   width: 100%;
-  max-width: 360px;
+  max-width: 380px;
+}
+
+.contact__email-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  width: 100%;
+}
+
+.contact__email-group .contact__link-item {
+  flex: 1;
+}
+
+.contact__copy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.contact__copy-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-glow);
 }
 
 .contact__link-item {

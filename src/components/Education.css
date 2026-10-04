@@ -1,13 +1,11 @@
-.education__card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-2xl);
-  transition: border-color var(--duration-normal) var(--ease-out);
+.education__card-spotlight {
+  height: 100%;
 }
 
-.education__card:hover {
-  border-color: var(--border-hover);
+.education__card-inner {
+  padding: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
 }
 
 .education__header {
@@ -27,10 +25,11 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .education__institution {
-  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
   font-weight: 700;
   color: var(--text-primary);
   letter-spacing: -0.02em;
@@ -78,15 +77,23 @@
 
 .education__cgpa {
   font-family: var(--font-mono);
-  font-weight: 600;
+  font-weight: 700;
   color: var(--accent);
-  font-size: 1rem;
+  font-size: 1.05rem;
 }
 
 .education__coursework {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
+}
+
+.education__coursework-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
 }
 
 .education__coursework-label {
@@ -98,14 +105,55 @@
   letter-spacing: 0.08em;
 }
 
+.education__coursework-hint {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
 .education__tags {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-sm);
 }
 
+.education__course-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.775rem;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.education__course-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-glow);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.15);
+}
+
+.education__course-icon {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.education__course-btn:hover .education__course-icon {
+  color: var(--accent);
+  transform: translate(2px, -2px);
+}
+
 @media (max-width: 768px) {
-  .education__card {
+  .education__card-inner {
     padding: var(--space-xl);
   }
 

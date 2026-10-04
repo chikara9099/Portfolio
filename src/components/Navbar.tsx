@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Download } from 'lucide-react';
 import { PROFILE } from '../data/content';
+import { ThemeSwitcher } from './ThemeSwitcher';
+import { Magnetic } from './Magnetic';
 import resumePdf from '../assets/Shahriar_Alam_Patwary_Resume.pdf';
 import './Navbar.css';
 
@@ -66,17 +68,23 @@ export const Navbar = () => {
             ))}
           </div>
 
-          <a
-            href={resumePdf}
-            download="Shahriar_Alam_Patwary_Resume.pdf"
-            className="navbar__resume-btn"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Download Resume"
-          >
-            <Download size={13} />
-            <span>Resume</span>
-          </a>
+          <Magnetic strength={0.3}>
+            <a
+              href={resumePdf}
+              download="Shahriar_Alam_Patwary_Resume.pdf"
+              className="navbar__resume-btn"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Download Resume"
+            >
+              <Download size={13} />
+              <span>Resume</span>
+            </a>
+          </Magnetic>
+
+          <Magnetic strength={0.3}>
+            <ThemeSwitcher />
+          </Magnetic>
         </div>
       </div>
     </motion.nav>

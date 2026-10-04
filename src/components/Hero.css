@@ -147,6 +147,13 @@
   justify-content: center;
 }
 
+.hero__email-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
 .hero__link:hover {
   color: var(--accent);
   background: var(--accent-glow);

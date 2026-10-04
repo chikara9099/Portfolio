@@ -12,7 +12,7 @@ export const Research = () => {
   return (
     <section id="research" className="section">
       <div className="container">
-        <SectionHeader label="06" title="Research & Innovation" />
+        <SectionHeader label="06" title="Research Interests" />
         <div ref={ref} className="research__interests">
           {RESEARCH_INTERESTS.map((interest, i) => (
             <motion.span

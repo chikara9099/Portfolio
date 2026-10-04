@@ -2,6 +2,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { SKILLS } from '../data/content';
 import { SectionHeader } from './SectionHeader';
+import { SpotlightCard } from './SpotlightCard';
 import './Skills.css';
 import './SectionHeader.css';
 
@@ -17,7 +18,6 @@ export const Skills = () => {
           {SKILLS.map((category, catIndex) => (
             <motion.div
               key={category.label}
-              className="skills-category"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{
@@ -26,14 +26,18 @@ export const Skills = () => {
                 ease: [0.16, 1, 0.3, 1],
               }}
             >
-              <h3 className="skills-category__label">{category.label}</h3>
-              <div className="skills-category__tags">
-                {category.skills.map((skill) => (
-                  <span key={skill} className="tag">
-                    {skill}
-                  </span>
-                ))}
-              </div>
+              <SpotlightCard className="skills-category-spotlight">
+                <div className="skills-category__inner">
+                  <h3 className="skills-category__label">{category.label}</h3>
+                  <div className="skills-category__tags">
+                    {category.skills.map((skill) => (
+                      <span key={skill} className="tag">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </SpotlightCard>
             </motion.div>
           ))}
         </div>
